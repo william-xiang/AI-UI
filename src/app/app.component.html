@@ -1,21 +1,51 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<body>
+	<div class="container">
+		<h1 class="g-12 g-mobile-10">{{title}}</h1>
+		<form class="ui-form">
+			<div class="ui-form-field g-6 g-mobile-10">
+				<div class="ui-textfield">
+					<label for="rd">R&D </label>
+					<input placeholder="10000" id="rd" required type="text" (keyup.enter)="getRD($event)"/>
+				</div>
+			</div>
 
-<router-outlet></router-outlet>
+			<div class="ui-form-field g-6 g-mobile-10">
+				<div class="ui-textfield">
+					<label for="adminstration">Administration</label>
+					<input placeholder="10000" id="surname" required type="text" (keyup.enter)="getAdministration($event)"/>
+        </div>
+      </div>
+      
+			<div class="ui-form-field g-6 g-mobile-10">
+				<div class="ui-textfield">
+					<label for="marketing">Marketing</label>
+					<input placeholder="10000" id="marketing" required type="text" (keyup.enter)="getMarketing($event)"/>
+				</div>
+      </div>
+
+      <div class="ui-form-field g-6 g-mobile-10">
+				<div class="ui-textfield">
+					<label for="state">State</label>
+					<input placeholder="State" id="state" required type="text" (keyup.enter)="getState($event)"/>
+				</div>
+      </div>
+
+			<div class="ui-form-field g-8 ">
+				<button type="button" class="btn btn-primary btn-lg ui-btn primary" (click)="calculate()">
+          Predict Profit
+        </button>
+      </div>
+      <div class="ui-form-field g-8 profitOutput">
+        <label>{{profit.total}}</label>
+      </div>
+
+      <div class="ui-form-field g-8">
+        {{ response }}
+      </div>
+
+      <div>
+        Teest
+      </div>
+		</form>
+	</div>
+</body>
