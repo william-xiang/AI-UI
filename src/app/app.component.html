@@ -15,7 +15,7 @@
 					<input placeholder="10000" id="surname" required type="text" (keyup.enter)="getAdministration($event)"/>
         </div>
       </div>
-      
+
 			<div class="ui-form-field g-6 g-mobile-10">
 				<div class="ui-textfield">
 					<label for="marketing">Marketing</label>
@@ -36,15 +36,8 @@
         </button>
       </div>
       <div class="ui-form-field g-8 profitOutput">
-        <label>{{profit.total}}</label>
-      </div>
-
-      <div class="ui-form-field g-8">
-        {{ response }}
-      </div>
-
-      <div>
-        Teest
+        <p>Profit Amount: </p>
+        <p>{{profit.total | number}}</p>
       </div>
 		</form>
 	</div>

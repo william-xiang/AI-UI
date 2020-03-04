@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'Startup Predictor!';
   profit = {
-    'total': 1000
+    'total': null
   }
 
   input = {
@@ -25,8 +25,8 @@ export class AppComponent {
   posts: any;
 
   response: any;
-  
-  
+
+
   constructor(private http: HttpClient) {
 
   }
@@ -48,11 +48,11 @@ export class AppComponent {
     console.log("invoke");
     const header = new HttpHeaders();
     header.set('Content-Type', 'application/json');
-    this.http.post(this.ROOT_URL, this.input, {headers: header}).subscribe(data => { 
+    this.http.post(this.ROOT_URL, this.input, {headers: header}).subscribe(data => {
       console.log(data)
       this.response = data;
 
-      this.profit.total = data['predictions'][0].values;
+      this.profit.total = data['predictions'][0].values[0][0];
     });
   }
 
